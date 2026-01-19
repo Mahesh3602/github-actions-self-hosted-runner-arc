@@ -3,7 +3,7 @@
 This repository demonstrates the setup and deployment of **Actions Runner Controller (ARC)** on a Kubernetes cluster hosted on **AWS EC2**. It uses the modern **Autoscaling Runner Scale Sets** architecture to provide ephemeral, scalable runners for GitHub Actions.
 
 ## 🏗️ Architecture
-- **Infrastructure:** AWS EC2 (Ubuntu)
+- **Infrastructure:** EKS/AWS or standalone cluster with controlplane & workernode
 - **Orchestration:** Kubernetes (K8s)
 - **Controller:** Actions Runner Controller (ARC)
 - **Scaling:** Runner Scale Sets (Autoscaling based on job demand)
@@ -11,7 +11,7 @@ This repository demonstrates the setup and deployment of **Actions Runner Contro
 ## 🚀 Setup & Installation
 
 ### 1. Prerequisites
-- A Kubernetes cluster running on EC2.
+- A working Kubernetes cluster.
 - Helm installed on the master node.
 - A GitHub Personal Access Token (PAT) with `repo` scopes.
 

@@ -1,0 +1,13 @@
+name: Test ARC Runner
+on: workflow_dispatch  # Allows you to click a button to run it
+
+jobs:
+  check-k8s:
+    # This MUST match the NAME you gave in your helm install command
+    runs-on: arc-runner-set 
+    steps:
+      - name: Hello World
+        run: |
+          echo "I am running on a Kubernetes Pod!"
+          hostname
+          sleep 30 # Keeps the pod alive long enough for you to see it

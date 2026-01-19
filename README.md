@@ -36,6 +36,6 @@ helm install arc-runner-set \
     oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set
 
 ### 5 . verify- pods created and destroy during the job run
-![Architecture Diagram](./images/k8s-running-pods.png)
-![Architecture Diagram](./images/actions-job-logs.png)
+![Runner Pods](./images/k8s-running-pods.png)
+![Action Job](./images/actions-job-logs.png)
 

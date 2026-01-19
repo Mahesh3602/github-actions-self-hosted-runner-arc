@@ -1,13 +1,20 @@
 name: Test ARC Runner
-on: workflow_dispatch  # Allows you to click a button to run it
+on: workflow_dispatch
 
 jobs:
   check-k8s:
-    # This MUST match the NAME you gave in your helm install command
-    runs-on: arc-runner-set 
+    runs-on: arc-runner-set
+    strategy:
+      # This creates 10 parallel instances of the job
+      matrix:
+        job-number: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      # Set to false so that if one job fails, the others don't stop
+      fail-fast: false
+
     steps:
       - name: Hello World
         run: |
+          echo "I am job number: ${{ matrix.job-number }}"
           echo "I am running on a Kubernetes Pod!"
           hostname
-          sleep 30 # Keeps the pod alive long enough for you to see it
+          sleep 30

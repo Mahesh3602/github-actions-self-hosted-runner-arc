@@ -24,8 +24,11 @@ export githubConfigUrl="[https://github.com/Mahesh3602/github-actions-self-hoste
 ### 3. Install ARC Controller
 helm repo add actions-runner-controller https://actions-runner-controller.github.io/actions-runner-controller
 
-export GITHUB_PAT="ghp_XXX"
-export githubConfigUrl="https://github.com/Mahesh3602/github-actions-self-hosted-runner-arc"
+kubectl create namespace arc-systems
+
+helm install arc-controller \
+    oci://ghcr.io/actions/actions-runner-controller-charts/gha-runner-scale-set-controller \
+    --namespace arc-systems
 
 ### 4. Install Runner Scale Set
 helm install arc-runner-set \
